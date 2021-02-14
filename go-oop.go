@@ -11,8 +11,8 @@ type Person struct {
 }
 
 func (person Person) info() {
-	fmt.Printf("%s  %s.", person.first, person.last)
-	fmt.Printf("\n is  %d year(s) old.\n", person.age)
+	fmt.Printf("%s %s.", person.first, person.last)
+	fmt.Printf("\n is %d year(s) old.\n", person.age)
 }
 
 // main function
