@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+type Human interface {
+	changeFirstName(name string)
+}
+
 type Person struct {
 	first string
 	last  string
@@ -20,6 +24,10 @@ func (person *Person) changeFirstName(name string) {
 	person.first = name
 }
 
+func testInferface(h Human, name string) {
+	h.changeFirstName(name)
+}
+
 // main function
 func main() {
 	p1 := Person{"John", "Smith", 57}
@@ -28,5 +36,7 @@ func main() {
 	p1.age = 56
 	p1.info()
 	p1.changeFirstName("Mary")
+	p1.info()
+	testInferface(&p1, "Zorro")
 	p1.info()
 }
